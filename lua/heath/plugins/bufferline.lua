@@ -6,6 +6,11 @@ return {
     require("bufferline").setup({
       options = {
         separator_style = "slant",
+        groups = {
+            items = {
+                require('bufferline.groups').builtin.pinned:with({ icon = "" })
+            }
+        },
         offsets = {
           {
             filetype = "NvimTree",
@@ -18,8 +23,9 @@ return {
     })
 
     require("which-key").register({
+      ["<tab>"] = { "<cmd>bnext<CR>", "Next Tab" },
       ["<S-tab>"] = { "<cmd>bprev<CR>", "Prev Tab" },
-      ["<tab>"] = { "<cmd><CR>", "Next Tab" },
+      ["<leader>bp"] = { "<cmd>BufferLineTogglePin<CR>", "[B]uffer [P]in" },
     })
   end,
 }
