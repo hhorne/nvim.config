@@ -67,8 +67,6 @@ return {
           },
           { "encoding", fmt = function(str) return string.upper(str) end, color = { gui = "bold" } },
           { "fileformat" },
-          -- { "require('heath.utils.lsp-status')()" },
-          -- { "filetype" },
           { "filetype", fmt = function(str) return str .. require("heath.utils.lsp-status")() end },
         },
       },
