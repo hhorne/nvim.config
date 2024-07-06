@@ -37,6 +37,7 @@ return {
       -- for dap
       "delve",
       "codelldb",
+      "netcoredbg",
       -- formatting
       "prettier",
     },
