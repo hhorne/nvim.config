@@ -56,6 +56,7 @@ return {
         "go",
         "python",
         "gleam",
+        "zig",
       },
       incremental_selection = {
         enable = true,

@@ -32,9 +32,10 @@ return {
       -- "csharp-language-server",
       -- "rust-analyzer",
       "gopls",
+      "zls", -- zig
       -- "python-lsp-server",
       -- "delve",
-      -- "codelldb",
+      "codelldb",
       -- "prettier",
     },
   },
