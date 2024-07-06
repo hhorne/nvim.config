@@ -5,6 +5,7 @@ return {
   config = function()
     require("bufferline").setup({
       options = {
+        separator_style = "slant",
         offsets = {
           {
             filetype = "NvimTree",
@@ -18,7 +19,7 @@ return {
 
     require("which-key").register({
       ["<S-tab>"] = { "<cmd>bprev<CR>", "Prev Tab" },
-      ["<tab>"] = { "<cmd>bnext<CR>", "Next Tab" },
+      ["<tab>"] = { "<cmd><CR>", "Next Tab" },
     })
   end,
 }
