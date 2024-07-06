@@ -52,9 +52,14 @@ return {
     lualine.setup({
       options = {
         theme = my_lualine_theme,
+        section_separators = { left = "", right = "" },
       },
       sections = {
-       lualine_x = {
+        lualine_a = {
+          { "mode", icon = " "},
+        },
+        lualine_b = { {"branch", icon = ""} },
+        lualine_x = {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
@@ -62,7 +67,9 @@ return {
           },
           { "encoding" },
           { "fileformat" },
-          { "filetype" },
+          -- { "require('heath.utils.lsp-status')()" },
+          -- { "filetype" },
+          { "filetype", fmt = function(str) return str .. require("heath.utils.lsp-status")() end },
         },
       },
     })
