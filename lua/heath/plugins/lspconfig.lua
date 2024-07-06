@@ -46,6 +46,7 @@ return {
       }
     }
 
+    local lspconfig = require("lspconfig")
     require("mason").setup()
     require("mason-lspconfig").setup {
       handlers = {
@@ -54,9 +55,11 @@ return {
           local capabilities = get_capabilities()
           local server = servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require("lspconfig")[server_name].setup(server)
+          lspconfig[server_name].setup(server)
         end
       }
     }
+
+    lspconfig.gleam.setup({})
   end,
 }
