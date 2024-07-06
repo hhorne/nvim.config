@@ -2,4 +2,5 @@
 
 ## todo
 
-    - replace nvim-surround with something else, may be mini surround
+- replace nvim-surround with something else, may be mini surround
+- finish adding LSP keymappings
