@@ -56,7 +56,7 @@ return {
       },
       sections = {
         lualine_a = {
-          { "mode", icon = " "},
+          { "mode", icon = ""},
         },
         lualine_b = { {"branch", icon = ""} },
         lualine_x = {
@@ -65,7 +65,7 @@ return {
             cond = lazy_status.has_updates,
             color = { fg = "#ff9e64" },
           },
-          { "encoding" },
+          { "encoding", fmt = function(str) return string.upper(str) end, color = { gui = "bold" } },
           { "fileformat" },
           -- { "require('heath.utils.lsp-status')()" },
           -- { "filetype" },
