@@ -12,6 +12,7 @@ o.undofile = true
 o.clipboard = "unnamedplus" -- use system clipboard as default register
 
 o.number = true
+o.relativenumber = true
 
 o.expandtab = true
 o.shiftwidth = 2
