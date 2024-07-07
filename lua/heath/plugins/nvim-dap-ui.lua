@@ -30,6 +30,9 @@ return {
     require("which-key").register({
       ["<leader>db"] = { dap.toggle_breakpoint, "[D]ebug [B]reakpoint" },
       ["<F5>"] = { dap.continue, "Continue" },
+      ["<F10>"] = { dap.step_over, "Step Over" },
+      ["<F11>"] = { dap.step_into, "Step Into" },
+      ["<F12>"] = { dap.step_out, "Step Out" },
     })
   end,
 }
