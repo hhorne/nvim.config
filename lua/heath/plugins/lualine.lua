@@ -1,4 +1,6 @@
 -- improved status line, shown at the bottom of the editor
+local lsp_status = require('heath.utils.lsp-status')
+
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -53,6 +55,7 @@ return {
       options = {
         theme = my_lualine_theme,
         section_separators = { left = "", right = "" },
+        disabled_filetypes = { "NvimTree" },
       },
       sections = {
         lualine_a = {
@@ -67,7 +70,8 @@ return {
           },
           { "encoding", fmt = function(str) return string.upper(str) end, color = { gui = "bold" } },
           { "fileformat" },
-          { "filetype", fmt = function(str) return str .. require("heath.utils.lsp-status")() end },
+          { "filetype" },
+          { lsp_status },
         },
       },
     })
