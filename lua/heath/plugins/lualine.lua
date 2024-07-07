@@ -13,7 +13,7 @@ return {
       violet = "#FF61EF",
       yellow = "#FFDA7B",
       red = "#FF4A4A",
-      purple = "#4400AA",
+      purple = "#6600AA",
       fg = "#c3ccdc",
       bg = "#112638",
       inactive_bg = "#2c3043",
