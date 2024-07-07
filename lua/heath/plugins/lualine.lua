@@ -13,6 +13,7 @@ return {
       violet = "#FF61EF",
       yellow = "#FFDA7B",
       red = "#FF4A4A",
+      purple = "#4400AA",
       fg = "#c3ccdc",
       bg = "#112638",
       inactive_bg = "#2c3043",
@@ -54,14 +55,21 @@ return {
     lualine.setup({
       options = {
         theme = my_lualine_theme,
-        section_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
         disabled_filetypes = { "NvimTree" },
       },
       sections = {
         lualine_a = {
           { "mode", icon = ""},
         },
-        lualine_b = { {"branch", icon = ""} },
+        lualine_b = {
+          {
+            "branch",
+            icon = "",
+            color = { bg = colors.purple, fg = "#FFFFFF" },
+            separator = { right = "" },
+          }
+        },
         lualine_x = {
           {
             lazy_status.updates,
