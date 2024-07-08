@@ -1,5 +1,6 @@
 -- improved status line, shown at the bottom of the editor
 local lsp_status = require('heath.utils.lsp-status')
+local lsp_filetype = require("heath.utils.lsp-filetype")
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -11,7 +12,7 @@ return {
       blue = "#65D1FF",
       green = "#3EFFDC",
       violet = "#FF61EF",
-      lime = "#00CC00",
+      lime = "#33BB33",
       yellow = "#FFDA7B",
       red = "#FF4A4A",
       purple = "#6600AA",
@@ -66,7 +67,7 @@ return {
         lualine_b = {
           {
             "branch",
-            icon = "",
+            icon = "󰊢",
             color = { bg = colors.purple, fg = "#FFFFFF" },
             separator = { right = "" },
           }
@@ -80,12 +81,14 @@ return {
           { "encoding", fmt = function(str) return string.upper(str) end, color = { gui = "bold" } },
           { "fileformat" },
           { "filetype" },
+          { lsp_filetype.render },
           {
             lsp_status,
+            hide_client = true,
             color = { bg = colors.lime, fg = colors.bg },
-            cond = function()
-              return true
-            end,
+            on_click = function()
+              vim.cmd(":LspInfo")
+            end
           },
         },
       },
