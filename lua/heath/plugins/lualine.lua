@@ -11,6 +11,7 @@ return {
       blue = "#65D1FF",
       green = "#3EFFDC",
       violet = "#FF61EF",
+      lime = "#00CC00",
       yellow = "#FFDA7B",
       red = "#FF4A4A",
       purple = "#6600AA",
@@ -79,7 +80,13 @@ return {
           { "encoding", fmt = function(str) return string.upper(str) end, color = { gui = "bold" } },
           { "fileformat" },
           { "filetype" },
-          { lsp_status },
+          {
+            lsp_status,
+            color = { bg = colors.lime, fg = colors.bg },
+            cond = function()
+              return true
+            end,
+          },
         },
       },
     })

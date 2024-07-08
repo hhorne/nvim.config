@@ -50,8 +50,8 @@ return {
               arrow_closed = "",
             },
             git = {
-              unstaged = "✗",
-              staged = "",
+              unstaged = "󱇧",
+              staged = "",
               unmerged = "",
               renamed = "",
               untracked = "",
